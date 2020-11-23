@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magepow" translate="label" sortOrder="300">
+             <label><![CDATA[Magepow]]></label>
+        </tab>
+        <section id="magepow_nextprevious" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label><![CDATA[Next Previous Product or Category]]></label>
+            <tab>magepow</tab>
+            <resource>Magepow_Nextprevious::config_nextprevious</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="10" showInWebsite="1" showInStore="1">
+                <label><![CDATA[General]]></label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Enabled]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Choose 'Yes' to enable module.]]></comment>
+                </field>
+<!--                 <field id="image" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Show Image]]></label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Show Image when hover to arrow]]></comment>
+                </field> -->
+                <field id="sort" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sort position</label>
+                    <source_model>Magepow\Nextprevious\Model\Config\Source\Sort</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

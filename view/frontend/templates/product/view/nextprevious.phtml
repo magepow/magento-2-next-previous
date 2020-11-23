@@ -1,0 +1,52 @@
+<?php 
+/*
+ * Magepow
+ * @category: Magepow
+ * @copyright: Copyright (c) 2014 Magepow (http://www.magepow.com/)
+ * @license: http://www.magepow.com/license-agreement
+ * @Author: DavidDuong
+ * @@Create Date: Wednesday, December 4th 2019, 8:43:54 pm
+ * @@Modified By: DavidDuong
+ * @@Modify Date: Friday, December 6th 2019, 3:41:40 pm
+ */ 
+
+$_product     = $block->getProduct();
+$prev_product = $block->getPrevProduct($_product);
+$next_product = $block->getNextProduct($_product);
+$category     = $block->getCurrentCategory($_product);
+$image        = 'category_page_grid';
+?>
+<?php if( !$prev_product && !$next_product ) return; ?>
+<div class="product-next-prev">
+    <?php if($category) : ?>
+            <div class="back_category">
+                <a href="<?php echo $category->getUrl(); ?>"><?php echo __('Back to:') ?> <?php echo $category->getName(); ?></a>
+            </div>
+    <?php endif; ?>
+    <?php if($next_product): ?>
+        <div class="product-next">
+            <a class="btn-product-next" title="<?php echo __('Next') ?>" href="<?php echo $next_product->getProductUrl(); ?>">
+                <span class="arrow"><?php echo __('Next') ?></span>
+            </a>
+            <?php
+            $productImage = $block->getImage($next_product, $image);
+            ?>
+            <a href="<?php /* @escapeNotVerified */ echo $next_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
+                <?php echo $productImage->toHtml(); ?>
+            </a>
+        </div>
+    <?php endif; ?>
+    <?php if($prev_product): ?>
+        <div class="product-prev">
+            <a class="btn-product-prev" title="<?php echo __('Previous') ?>" href="<?php echo $prev_product->getProductUrl(); ?>">
+                <span class="arrow"><?php echo __('Previous') ?></span>
+            </a>
+            <?php
+            $productImage = $block->getImage($prev_product, $image);
+            ?>
+            <a href="<?php /* @escapeNotVerified */ echo $prev_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
+                <?php echo $productImage->toHtml(); ?>
+            </a>
+        </div>
+    <?php endif; ?>
+</div>

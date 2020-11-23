@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <magepow_nextprevious>
+            <general>
+                <enabled>1</enabled>
+                <image>1</image>
+                <sort>0</sort>
+            </general>
+        </magepow_nextprevious>
+    </default>
+</config>

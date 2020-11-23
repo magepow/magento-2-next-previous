@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+Magepow
+@category: Magepow
+@copyright: Copyright (c) 2014 Magepow (http://www.magepow.com/)
+@license: http://www.magepow.com/license-agreement
+@Author: DavidDuong
+@@Create Date: Wednesday, December 4th 2019, 8:43:54 pm
+@@Modified By: DavidDuong
+@@Modify Date: Thursday, December 5th 2019, 9:58:21 am
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceContainer name="content">
+		    <block ifconfig="magepow_nextprevious/general/enabled"  class="Magepow\Nextprevious\Block\Nextprevious" name="product.info.previousnext" template="product/view/nextprevious.phtml" />   
+		</referenceContainer>
+		<move element="product.info.previousnext" destination="product.info.main" before="-"/>
+	</body>
+</page>

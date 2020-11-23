@@ -1,0 +1,27 @@
+{
+  "name": "magepow/nextprevious",
+  "description": "Show next previous product or category of magento2",
+  "require": {
+    "magepow/core": "^1.0.0"
+  },
+  "type": "magento2-module",
+  "license": [
+    "MIT"
+  ],
+  "authors": [
+    {
+      "name": "Magepow",
+      "email": "support@magepow.com",
+      "homepage": "https://www.magepow.com",
+      "role": "Technical Support"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Magepow\\Nextprevious\\": ""
+    },
+    "files": [
+      "registration.php"
+    ]
+  }
+}
