@@ -80,7 +80,7 @@ class Nextprevious extends \Magento\Catalog\Block\Product\AbstractProduct
         $current_category = $product->getCategory();
         if(!$current_category) {
             foreach($product->getCategoryCollection() as $parent_cat) {
-                $current_category = $parent_cat;
+                $current_category = $this->getModel('Magento\Catalog\Model\Category')->load($parent_cat->getId());
             }
         }
         if(!$current_category)
