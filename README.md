@@ -6,11 +6,16 @@ In Magento 2's default settings, when a user is on a product page and wants to s
 To solve this problem, you can install our Magento 2 Next And Previous Product extension. This extension will provide next and previous buttons so the customer can view the previous or subsequent product of the product they are viewing.
 
 ## Highlight Features
-Option to enable/disable the extension.
+- Option to enable/disable the extension.
 
-View the previous or next product of the current product with just 1 click.
+- View the previous or next product of the current product with just 1 click.
 
-Displays the previous/next product image on mouse hover action.
+Currently, customer experience is a very important factor when doing business online. An online business website has a good customer experience when customers can easily see the products on the website. Hence, Magento 2 Next And Previous Product is an essential module for your business website. When customers visit your store, they simply click the next or previous button to browse for other products.
+
+- Displays the previous/next product image on mouse hover action.
+
+Besides the main functionality, with this extension, shop owners can display thumbnails of after or before product the product being viewed on hover on the next or previous button on the pop-up.
+
 ## How to install Magento 2 Next And Previous Product
 
 Install Magepow Next And Previous Product via composer (recommend)
