@@ -4,8 +4,8 @@
         <magepow_nextprevious>
             <general>
                 <enabled>1</enabled>
+                <sort>1</sort>
                 <image>1</image>
-                <sort>0</sort>
             </general>
         </magepow_nextprevious>
     </default>

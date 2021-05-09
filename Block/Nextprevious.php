@@ -14,22 +14,22 @@ namespace Magepow\Nextprevious\Block;
 
 class Nextprevious extends \Magento\Catalog\Block\Product\AbstractProduct
 {
-    protected $_objectManager;
+    /**
+     * @var \Magento\Framework\ObjectManagerInterface
+     */
     
-    /**
-     * @var Product
-     */
-    protected $_product;
+    protected $_objectManager;
 
     /**
-     * Core registry
-     *
-     * @var \Magento\Framework\Registry
+     * @var array
      */
-    protected $_coreRegistry;
+    
+    protected $_nextPrevious;
 
-    protected $_helper;
-
+    /**
+     * @var \Magepow\Nextprevious\Helper\Data
+     */
+    public $_helper;
     /**
      * @param \Magento\Framework\View\Element\Template\Context $context
      * @param \Magento\Framework\Registry $registry
@@ -43,98 +43,75 @@ class Nextprevious extends \Magento\Catalog\Block\Product\AbstractProduct
         \Magepow\Nextprevious\Helper\Data $helper,
         array $data = []
     ) {
-        $this->_coreRegistry  = $context->getRegistry();
         $this->_objectManager = $objectManager;
         $this->_helper        = $helper;
         parent::__construct($context, $data);
     }
 
-    /**
-     * @return Product
-     */
-    public function getProduct()
+    public function getModel($model) 
     {
-        if (!$this->_product) {
-            $this->_product = $this->_coreRegistry->registry('product');
-        }
-        return $this->_product;
-    }
-
-    public function getModel($model) {
         return $this->_objectManager->create($model);
     }
 
-    public function getCategoryProductIds($current_category) {
-        $category_products = $current_category->getProductCollection()
-            ->addAttributeToSelect('*')
-            ->addAttributeToFilter('status', array('eq' => 1))
-            ->addAttributeToFilter('visibility', array('eq' => 4))
-            ->addAttributeToSort('position', 'asc');
-            
-        $cat_prod_ids = $category_products->getAllIds();
+    public function getCategoryProductIds($category) 
+    {
+        $categoryProducts = $category->getProductCollection();
+        $productsPosition = $categoryProducts->getAllIds();
+        // $productsPosition = $category->getProductsPosition();
         
-        return $cat_prod_ids;
+        return $productsPosition;
     }
 
-    public function getCurrentCategory($product){
-        $current_category = $product->getCategory();
-        
-        if(!$current_category || $current_category->getIsActive() == 0)
-        {
-            foreach($product->getCategoryCollection() as $parent_cat) {
-                $current_category = $this->getModel('Magento\Catalog\Model\Category')->load($parent_cat->getId());
-                if($current_category->getIsActive()){
-                    return $current_category;
+    public function getCurrentCategory($product)
+    {
+        $currentCategory = $product->getCategory();
+        if(!$currentCategory || $currentCategory->getIsActive() == 0){
+            foreach($product->getCategoryCollection() as $category) {
+                $categoryId = $category->getId();
+                $currentCategory = $this->getModel('Magento\Catalog\Model\Category')->load($categoryId);
+                if($currentCategory->getIsActive()){
+                    return $currentCategory;
                 }
             }
-            return false;
+            return;
         }
         
-        return $current_category;
+        return $currentCategory;
     }
 
-    public function getPrevProduct($product) {
-        $current_category = $this->getCurrentCategory($product);
+    public function getNextPrevious($product)
+    {
+        if(!$this->_nextPrevious){
+            $currentCategory = $this->getCurrentCategory($product);
 
-        if(!$current_category)
-            return false;
-        $cat_prod_ids = $this->getCategoryProductIds($current_category);
-        $_pos = array_search($product->getId(), $cat_prod_ids);
-        if($this->_helper->getConfigModule('general/sort')){
-            if (isset($cat_prod_ids[$_pos - 1])) {
-                $prev_product = $this->getModel('Magento\Catalog\Model\Product')->load($cat_prod_ids[$_pos - 1]);
-                return $prev_product;
-            }
-        }else{
-
-            if (isset($cat_prod_ids[$_pos + 1])) {
-                $prev_product = $this->getModel('Magento\Catalog\Model\Product')->load($cat_prod_ids[$_pos + 1]);
-                return $prev_product;
+            if(!$currentCategory) return;
+            $productIds = $this->getCategoryProductIds($currentCategory);
+            $_pos = array_search($product->getId(), $productIds);
+            if($this->_helper->getConfigModule('general/sort')){
+                $this->_nextPrevious['next'] = isset($productIds[$_pos + 1]) ? $productIds[$_pos + 1] : '';
+                $this->_nextPrevious['prev'] = isset($productIds[$_pos - 1]) ? $productIds[$_pos - 1] : '';
+            }else{
+                $this->_nextPrevious['next'] = isset($productIds[$_pos - 1]) ? $productIds[$_pos - 1] : '';
+                $this->_nextPrevious['prev'] = isset($productIds[$_pos + 1]) ? $productIds[$_pos + 1] : '';
             }
         }
-        return false;
+        return $this->_nextPrevious;
+    }
+
+    public function getPrevProduct($product) 
+    {
+        $nextPrevious = $this->getNextPrevious($product);
+        if(!isset($nextPrevious['prev']) || !$nextPrevious['prev']) return;
+        $productId = $nextPrevious['prev'];
+        return $this->getModel('Magento\Catalog\Model\Product')->load($productId);
     }
     
-    public function getNextProduct($product) {
-        $current_category = $this->getCurrentCategory($product);
-        
-        if(!$current_category)
-            return false;
-        $cat_prod_ids = $this->getCategoryProductIds($current_category);
-        $_pos = array_search($product->getId(), $cat_prod_ids);
-        if($this->_helper->getConfigModule('general/sort')){
-            if (isset($cat_prod_ids[$_pos + 1])) {
-                $next_product = $this->getModel('Magento\Catalog\Model\Product')->load($cat_prod_ids[$_pos + 1]);
-                return $next_product;
-            }
-        }else{
-
-            if (isset($cat_prod_ids[$_pos - 1])) {
-                $next_product = $this->getModel('Magento\Catalog\Model\Product')->load($cat_prod_ids[$_pos - 1]);
-                return $next_product;
-            }
-        }
-        return false;
+    public function getNextProduct($product)
+    {
+        $nextPrevious = $this->getNextPrevious($product);
+        if(!isset($nextPrevious['next']) || !$nextPrevious['next']) return;
+        $productId = $nextPrevious['next'];
+        return $this->getModel('Magento\Catalog\Model\Product')->load($productId);
     }
 
 }

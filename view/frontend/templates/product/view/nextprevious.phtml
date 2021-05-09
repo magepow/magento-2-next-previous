@@ -10,41 +10,40 @@
  * @@Modify Date: Friday, December 6th 2019, 3:41:40 pm
  */ 
 
-$_product     = $block->getProduct();
-$prev_product = $block->getPrevProduct($_product);
-$next_product = $block->getNextProduct($_product);
-$category     = $block->getCurrentCategory($_product);
-$image        = 'category_page_grid';
-$helper       = $this->helper('Magepow\Nextprevious\Helper\Data');
-$showImage    = $helper->getConfigModule('general/image');
+    $_product       = $block->getProduct();
+    $prevProduct    = $block->getPrevProduct($_product);
+    $nextProduct    = $block->getNextProduct($_product);
+    if( !$prevProduct && !$nextProduct ) return; 
+    $category       = $block->getCurrentCategory($_product);
+    $image          = 'category_page_grid';
+    $showImage      = $this->_helper->getConfigModule('general/image');
 ?>
-<?php if( !$prev_product && !$next_product ) return; ?>
 <div class="product-next-prev">
     <?php if($category) : ?>
             <div class="back_category">
                 <a href="<?php echo $category->getUrl(); ?>"><?php echo __('Back to:') ?> <?php echo $category->getName(); ?></a>
             </div>
     <?php endif; ?>
-    <?php if($next_product): ?>
+    <?php if($nextProduct): ?>
         <div class="product-next">
-            <a class="btn-product-next" title="<?php echo __('Next') ?>" href="<?php echo $next_product->getProductUrl(); ?>">
+            <a class="btn-product-next" title="<?php echo __('Next') ?>" href="<?php echo $nextProduct->getProductUrl(); ?>">
                 <span class="arrow"><?php echo __('Next') ?></span>
             </a>
             <?php if($showImage) : ?>
-                <a href="<?php /* @escapeNotVerified */ echo $next_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
-                    <?php echo $block->getImage($next_product, $image)->toHtml(); ?>
+                <a href="<?php /* @escapeNotVerified */ echo $nextProduct->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
+                    <?php echo $block->getImage($nextProduct, $image)->toHtml(); ?>
                 </a>
             <?php endif; ?>
         </div>
     <?php endif; ?>
-    <?php if($prev_product): ?>
+    <?php if($prevProduct): ?>
         <div class="product-prev">
-            <a class="btn-product-prev" title="<?php echo __('Previous') ?>" href="<?php echo $prev_product->getProductUrl(); ?>">
+            <a class="btn-product-prev" title="<?php echo __('Previous') ?>" href="<?php echo $prevProduct->getProductUrl(); ?>">
                 <span class="arrow"><?php echo __('Previous') ?></span>
             </a>
             <?php if($showImage) : ?>
-                <a href="<?php /* @escapeNotVerified */ echo $prev_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
-                    <?php echo $block->getImage($prev_product, $image)->toHtml(); ?>
+                <a href="<?php /* @escapeNotVerified */ echo $prevProduct->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
+                    <?php echo $block->getImage($prevProduct, $image)->toHtml(); ?>
                 </a>
             <?php endif; ?>
         </div>
