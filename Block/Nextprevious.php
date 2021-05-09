@@ -32,8 +32,8 @@ class Nextprevious extends \Magento\Catalog\Block\Product\AbstractProduct
     public $_helper;
     /**
      * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Magento\Framework\Registry $registry
-     * @param \Magento\Framework\ObjectManagerInterface $objectManager,
+     * @param \Magento\Framework\ObjectManagerInterface $objectManager
+     * @param \Magepow\Nextprevious\Helper\Data $helper
      * @param array $data
      */
 
