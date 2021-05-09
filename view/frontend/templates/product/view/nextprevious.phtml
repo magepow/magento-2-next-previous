@@ -24,28 +24,36 @@
                 <a href="<?php echo $category->getUrl(); ?>"><?php echo __('Back to:') ?> <?php echo $category->getName(); ?></a>
             </div>
     <?php endif; ?>
-    <?php if($nextProduct): ?>
-        <div class="product-next">
-            <a class="btn-product-next" title="<?php echo __('Next') ?>" href="<?php echo $nextProduct->getProductUrl(); ?>">
-                <span class="arrow"><?php echo __('Next') ?></span>
-            </a>
-            <?php if($showImage) : ?>
-                <a href="<?php /* @escapeNotVerified */ echo $nextProduct->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
-                    <?php echo $block->getImage($nextProduct, $image)->toHtml(); ?>
-                </a>
-            <?php endif; ?>
-        </div>
-    <?php endif; ?>
-    <?php if($prevProduct): ?>
-        <div class="product-prev">
-            <a class="btn-product-prev" title="<?php echo __('Previous') ?>" href="<?php echo $prevProduct->getProductUrl(); ?>">
-                <span class="arrow"><?php echo __('Previous') ?></span>
-            </a>
-            <?php if($showImage) : ?>
-                <a href="<?php /* @escapeNotVerified */ echo $prevProduct->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
-                    <?php echo $block->getImage($prevProduct, $image)->toHtml(); ?>
-                </a>
-            <?php endif; ?>
-        </div>
-    <?php endif; ?>
+    <ol class="products list items product-items">
+        <?php if($nextProduct): ?>
+            <?php $_item = $nextProduct ?>
+            <li class="item product product-item">
+                <div class="product-next">
+                    <a class="btn-product-next" title="<?php echo __('Next') ?>" href="<?php echo $_item->getProductUrl(); ?>">
+                        <span class="arrow"><?php echo __('Next') ?></span>
+                    </a>
+                    <?php if($showImage) : ?>
+                        <a href="<?php /* @escapeNotVerified */ echo $_item->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
+                            <?php echo $block->getImage($_item, $image)->toHtml(); ?>
+                        </a>
+                    <?php endif; ?>
+                </div>
+            </li>
+        <?php endif; ?>
+        <?php if($prevProduct): ?>
+            <?php $_item = $prevProduct ?>
+            <li class="item product product-item">
+                <div class="product-prev">
+                    <a class="btn-product-prev" title="<?php echo __('Previous') ?>" href="<?php echo $_item->getProductUrl(); ?>">
+                        <span class="arrow"><?php echo __('Previous') ?></span>
+                    </a>
+                    <?php if($showImage) : ?>
+                        <a href="<?php /* @escapeNotVerified */ echo $_item->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
+                            <?php echo $block->getImage($_item, $image)->toHtml(); ?>
+                        </a>
+                    <?php endif; ?>
+                </div>
+            </li>
+        <?php endif; ?>
+    </ol>
 </div>
