@@ -19,18 +19,13 @@
     $showImage      = $this->_helper->getConfigModule('general/image');
 ?>
 <div class="product-next-prev">
-    <?php if($category) : ?>
-            <div class="category-back">
-                <a href="<?php echo $category->getUrl(); ?>"><span><?php echo __('Back to:') ?> <?php echo $category->getName(); ?></span></a>
-            </div>
-    <?php endif; ?>
     <ol class="products list items product-items">
-        <?php if($nextProduct): ?>
-            <?php $_item = $nextProduct ?>
+        <?php if($prevProduct): ?>
+            <?php $_item = $prevProduct ?>
             <li class="item product product-item">
-                <div class="product-next">
-                    <a class="btn-product-next" title="<?php echo __('Next') ?>" href="<?php echo $_item->getProductUrl(); ?>">
-                        <span class="arrow"><?php echo __('Next') ?></span>
+                <div class="product-prev">
+                    <a class="btn-product-prev" title="<?php echo __('Previous') ?>" href="<?php echo $_item->getProductUrl(); ?>">
+                        <span class="arrow"><?php echo __('Previous') ?></span>
                     </a>
                     <?php if($showImage) : ?>
                         <a href="<?php /* @escapeNotVerified */ echo $_item->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
@@ -40,12 +35,19 @@
                 </div>
             </li>
         <?php endif; ?>
-        <?php if($prevProduct): ?>
-            <?php $_item = $prevProduct ?>
+        <?php if($category) : ?>
+            <li class="item product product-item category-back-to">
+                <div class="category-back">
+                    <a href="<?php echo $category->getUrl(); ?>"><span><?php echo __('Back to:') ?> <?php echo $category->getName(); ?></span></a>
+                </div>
+            </li>
+        <?php endif; ?>
+        <?php if($nextProduct): ?>
+            <?php $_item = $nextProduct ?>
             <li class="item product product-item">
-                <div class="product-prev">
-                    <a class="btn-product-prev" title="<?php echo __('Previous') ?>" href="<?php echo $_item->getProductUrl(); ?>">
-                        <span class="arrow"><?php echo __('Previous') ?></span>
+                <div class="product-next">
+                    <a class="btn-product-next" title="<?php echo __('Next') ?>" href="<?php echo $_item->getProductUrl(); ?>">
+                        <span class="arrow"><?php echo __('Next') ?></span>
                     </a>
                     <?php if($showImage) : ?>
                         <a href="<?php /* @escapeNotVerified */ echo $_item->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
