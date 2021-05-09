@@ -20,8 +20,8 @@
 ?>
 <div class="product-next-prev">
     <?php if($category) : ?>
-            <div class="back_category">
-                <a href="<?php echo $category->getUrl(); ?>"><?php echo __('Back to:') ?> <?php echo $category->getName(); ?></a>
+            <div class="category-back">
+                <a href="<?php echo $category->getUrl(); ?>"><span><?php echo __('Back to:') ?> <?php echo $category->getName(); ?></span></a>
             </div>
     <?php endif; ?>
     <ol class="products list items product-items">
