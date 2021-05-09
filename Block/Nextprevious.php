@@ -100,7 +100,7 @@ class Nextprevious extends \Magento\Catalog\Block\Product\AbstractProduct
             return false;
         $cat_prod_ids = $this->getCategoryProductIds($current_category);
         $_pos = array_search($product->getId(), $cat_prod_ids);
-        if($this->getConfigModule('general/sort')){
+        if($this->_helper->getConfigModule('general/sort')){
             if (isset($cat_prod_ids[$_pos - 1])) {
                 $prev_product = $this->getModel('Magento\Catalog\Model\Product')->load($cat_prod_ids[$_pos - 1]);
                 return $prev_product;
@@ -122,7 +122,7 @@ class Nextprevious extends \Magento\Catalog\Block\Product\AbstractProduct
             return false;
         $cat_prod_ids = $this->getCategoryProductIds($current_category);
         $_pos = array_search($product->getId(), $cat_prod_ids);
-        if($this->getConfigModule('general/sort')){
+        if($this->_helper->getConfigModule('general/sort')){
             if (isset($cat_prod_ids[$_pos + 1])) {
                 $next_product = $this->getModel('Magento\Catalog\Model\Product')->load($cat_prod_ids[$_pos + 1]);
                 return $next_product;
