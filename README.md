@@ -16,6 +16,10 @@ Currently, customer experience is a very important factor when doing business on
 
 Besides the main functionality, with this extension, shop owners can display thumbnails of after or before product the product being viewed on hover on the next or previous button on the pop-up.
 
+- Show name, SKU, price of next and previous product, help customers understand clearly information about products.
+- Show the add to wishlist and the add to compare icons
+- Displays the back to current category button.
+
 ## How to install Magento 2 Next And Previous Product
 
 Install Magepow Next And Previous Product via composer (recommend)
