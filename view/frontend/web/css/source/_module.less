@@ -1,17 +1,22 @@
 & when (@media-common = true) {
 	.product-prev {
 		margin: 0 0 0 0px;
-		float: right;
+		
 	}
 	.product-next {
-		margin: 0 0 0 4px;
-		float: right;
+		
+		
 	}
+	
 	.product-next-prev {
 		margin: auto;
+		float: right;
+		.products {
+			margin: 0;
+		}
 		.product-prev, 
 		.product-next {
-			background: #f5f5f5;
+			// background: #f5f5f5;
 			font-size: 20px;
 			line-height: 28px;
 			display: inline-block;
@@ -24,12 +29,47 @@
 			border: 1px solid #fff;
 			&:hover{
 				color: #fff;
-				border: 1px solid #ccc;
+				border: 1px solid #1979c3;
 				text-decoration: none;
+			}
+			&:hover {
+				.product-item-info {
+					display: block;
+				}
 			}
 			a{
 				&:hover{
 					text-decoration: none;
+				}
+			}
+		}
+		.product-item {
+			display: inline-block;
+			
+		}
+		.product-item-info {
+			position: absolute;
+			max-width: none;
+			display: none;
+		}
+		.category-back {
+			a {
+				width: 30px;
+				height: 28px;
+				display: block;
+				line-height: 28px;
+				text-align: center;
+				border: 1px solid #fff;
+				border-radius: 2px;
+				span {
+					display: none;
+				}
+				&:before {
+					content: @icon-grid;
+					font-family: @icon-font;
+				}
+				&:hover {
+					border-color: #1979c3;
 				}
 			}
 		}
@@ -59,7 +99,7 @@
 		.product-prev,
 		.product-next {
 			position: relative;
-			.product-item-photo {
+			.product-item-info {
 				opacity: 0;
 				visibility: hidden;
 				position: absolute;
@@ -68,13 +108,47 @@
 				transform: translateX(-50%);
 				border: 1px solid #f2f2f2;
 				max-width: 120px;
+				max-width: 150px;
 				box-shadow: 0 0 5px #dfdfdf;
 				transition: all 0.3s ease-in-out;
+				border-top: 3px solid #1979c3;
+				&:before {
+					content: '';
+					position: absolute;
+					border: 6px solid transparent;
+					border-bottom-color: #1979c3;
+					left: 50%;
+					top: -15px;
+					transform: translate(-50%, 0);
+				}
+				.product-item-name {
+					margin: 0;
+					.product-item-link {
+						font-size: 1.2rem;
+					}
+				}
+				.product-item-details {
+					padding-left: 5px;
+					padding-right: 5px;
+				}
+				.product {
+					&.sku {
+						color: #555555;
+						font-size: 1.2rem;
+					}
+				}
+				.price-box {
+					margin: 0 0 10px;
+				}
+				.price {
+					color: #555555;
+				}
 			}
 			&:hover {
-				.product-item-photo {
+				.product-item-info {
 					opacity: 1;
 					visibility: visible;
+
 				}
 			}
 		}
