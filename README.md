@@ -20,6 +20,22 @@ Besides the main functionality, with this extension, shop owners can display thu
 - Show the add to wishlist and the add to compare icons
 - Displays the back to current category button.
 
+**Pro version with outstanding features**
+
+| Features  | Free Version  | Pro Version |
+| :------------ |:---------------:| :-----:|
+|View the previous or next product of the current product with just 1 click|:white_check_mark:|:white_check_mark:|
+|Displays the previous/next product image on mouse hover action|:white_check_mark:|:white_check_mark:|
+|Arrange products in ascending or descending order|:white_check_mark:|:white_check_mark:|
+|Show Product Name|X|:white_check_mark:|
+|Show Product SKU|X|:white_check_mark:|
+|Show Price|X|:white_check_mark:|
+|Show Add To Cart|X|:white_check_mark:|
+|Show Add To Wishlist|X|:white_check_mark:|
+|Show Add To Compare|X|:white_check_mark:|
+|Show Back Category|X|:white_check_mark:|
+|Customize the display of Button Next and Button Previous separately|X|:white_check_mark:|
+
 ## How to install Magento 2 Next And Previous Product
 
 Install Magepow Next And Previous Product via composer (recommend)
