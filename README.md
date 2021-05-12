@@ -1,5 +1,5 @@
-## Magento 2 Next Previous Extension
-Magepow's Magento 2 Next And Previous Product will help customers see the products in your online store quickly.
+## Magento 2 Next Previous Product Extension
+Magepow's Magento 2 Next And Previous Product Extension will help customers see the products in your online store quickly, increase user experience.
 
 ## Description
 In Magento 2's default settings, when a user is on a product page and wants to see the next product, they will have to return to the category page, which is time-consuming for the customer.
@@ -12,13 +12,13 @@ To solve this problem, you can install our Magento 2 Next And Previous Product e
 
 Currently, customer experience is a very important factor when doing business online. An online business website has a good customer experience when customers can easily see the products on the website. Hence, Magento 2 Next And Previous Product is an essential module for your business website. When customers visit your store, they simply click the next or previous button to browse for other products.
 
-![Magento 2 Next Previous Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous-1.png)
+![Magento 2 Next Previous Product Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous-1.png)
 
 - Displays the previous/next product image on mouse hover action.
 
 Besides the main functionality, with this extension, shop owners can display thumbnails of after or before product the product being viewed on hover on the next or previous button on the pop-up.
 
-![Magento 2 Next Previous Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous-2.gif)
+![Magento 2 Next Previous Product Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous-2.gif)
 
 - Show name, SKU, price of next and previous product, help customers understand clearly information about products.
 - Show the add to wishlist and the add to compare icons.
@@ -45,9 +45,11 @@ Besides the main functionality, with this extension, shop owners can display thu
 |Show Back Category|X|:white_check_mark:|
 |Customize the display of Button Next and Button Previous separately|X|:white_check_mark:|
 
-## How to install Magento 2 Next And Previous Product
+Download the latest version at [Magento 2 Next Previous Product Extension](https://magepow.com/magento-2-next-and-previus-product.html)
 
-Install Magepow Next And Previous Product via composer (recommend)
+## How to install Magento 2 Next And Previous Product Product Extension Free Version
+
+Install Magepow Next And Previous Product Extension via composer (recommend)
 
 Run the following command in Magento 2 root folder:
 
@@ -74,9 +76,9 @@ In "Sort position" select "Ascending" or "Descending" to define the product show
 
 ![Magento 2 Next Previous Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous-5.png)
 
-With the pro version you need to install the following features:
+With the ro version you need to install the following features:
 
-![Magento 2 Next Previous Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous-6.png)
+![Magento 2 Next Previous Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous.png)
 
 Go to the product page and see how it works.
 
