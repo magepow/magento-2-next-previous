@@ -5,6 +5,8 @@ Magepow's Magento 2 Next And Previous Product Extension will help customers see 
 In Magento 2's default settings, when a user is on a product page and wants to see the next product, they will have to return to the category page, which is time-consuming for the customer.
 To solve this problem, you can install our Magento 2 Next And Previous Product extension. This extension will provide next and previous buttons so the customer can view the previous or subsequent product of the product they are viewing.
 
+![Magento 2 Next Previous Product Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous-6.gif)
+
 ## Highlight Features
 - Option to enable/disable the extension.
 
