@@ -112,14 +112,14 @@ class Nextprevious extends \Magento\Catalog\Block\Product\AbstractProduct
     public function getPrevProduct($product) 
     {
         $previousAndNext = $this->getPreviousAndNext($product);
-        $product = current($previousAndNext);
+        $product = $previousAndNext ? current($previousAndNext) : '';
         return $product;
     }
     
     public function getNextProduct($product)
     {
         $previousAndNext = $this->getPreviousAndNext($product);
-        $product = next($previousAndNext);
+        $product = $previousAndNext ? next($previousAndNext) : '';
         return $product;
     }
 
