@@ -49,9 +49,9 @@ Besides the main functionality, with this extension, shop owners can display thu
 
 Download the latest version at [Magento 2 Next Previous Product Extension](https://magepow.com/magento-2-next-and-previus-product.html)
 
-[![Latest Stable Version](https://poser.pugx.org/magepow/nextprevius/v/stable)](https://packagist.org/packages/magepow/nextprevius)
-[![Total Downloads](https://poser.pugx.org/magepow/nextprevius/downloads)](https://packagist.org/packages/magepow/nextprevius)
-[![Daily Downloads](https://poser.pugx.org/magepow/nextprevius/d/daily)](https://packagist.org/packages/magepow/nextprevius)
+[![Latest Stable Version](https://poser.pugx.org/magepow/nextprevious/v/stable)](https://packagist.org/packages/magepow/nextprevious)
+[![Total Downloads](https://poser.pugx.org/magepow/nextprevious/downloads)](https://packagist.org/packages/magepow/nextprevious)
+[![Daily Downloads](https://poser.pugx.org/magepow/nextprevious/d/daily)](https://packagist.org/packages/magepow/nextprevious)
 
 ## How to install Magento 2 Next And Previous Product Product Extension Free Version
 
@@ -60,7 +60,7 @@ Install Magepow Next And Previous Product Extension via composer (recommend)
 Run the following command in Magento 2 root folder:
 
 ```
-composer require magepow/nextprevius
+composer require magepow/nextprevious
 php bin/magento setup:upgrade
 php bin/magento setup:static-content:deploy -f
 ```
