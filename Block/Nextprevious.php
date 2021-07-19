@@ -97,6 +97,7 @@ class Nextprevious extends \Magento\Catalog\Block\Product\AbstractProduct
         }
         $productId = $product->getId();
         $nextPrevious = $this->_nextPrevious;
+        if(!$nextPrevious) return;
         $prevProduct  = '';
         foreach ($nextPrevious as $id => $product) {
             if($id == $productId) break;
