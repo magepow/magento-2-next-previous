@@ -1,3 +1,5 @@
+[<img src="https://github.com/magepow/themeforest/blob/master/shopify/shopify_affiliate.jpg" >](https://shopify.pxf.io/VyL446)
+
 ## Magento 2 Next Previous Product Extension
 Magepow's Magento 2 Next And Previous Product Extension will help customers see the products in your online store quickly, increase user experience.
 
