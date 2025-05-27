@@ -7,7 +7,7 @@ Magepow's Magento 2 Next And Previous Product Extension will help customers see 
 In Magento 2's default settings, when a user is on a product page and wants to see the next product, they will have to return to the category page, which is time-consuming for the customer.
 To solve this problem, you can install our Magento 2 Next And Previous Product extension. This extension will provide next and previous buttons so the customer can view the previous or subsequent product of the product they are viewing.
 
-![Magento 2 Next Previous Product Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous-6.gif)
+![Magento 2 Next Previous Product Extension](https://github.com/magepow/magento-2-next-previous/blob/main/media/magento-2-next-and-previous-6.gif)
 
 ## Highlight Features
 - Option to enable/disable the extension.
@@ -16,22 +16,22 @@ To solve this problem, you can install our Magento 2 Next And Previous Product e
 
 Currently, customer experience is a very important factor when doing business online. An online business website has a good customer experience when customers can easily see the products on the website. Hence, Magento 2 Next And Previous Product is an essential module for your business website. When customers visit your store, they simply click the next or previous button to browse for other products.
 
-![Magento 2 Next Previous Product Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous-1.png)
+![Magento 2 Next Previous Product Extension](https://github.com/magepow/magento-2-next-previous/blob/main/media/magento-2-next-and-previous-1.png)
 
 - Displays the previous/next product image on mouse hover action.
 
 Besides the main functionality, with this extension, shop owners can display thumbnails of after or before product the product being viewed on hover on the next or previous button on the pop-up.
 
-![Magento 2 Next Previous Product Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous-2.gif)
+![Magento 2 Next Previous Product Extension](https://github.com/magepow/magento-2-next-previous/blob/main/media/magento-2-next-and-previous-2.gif)
 
 - Show name, SKU, price of next and previous product, help customers understand clearly information about products.
 - Show the add to wishlist and the add to compare icons.
 
-![Magento 2 Next Previous Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous-3.png)
+![Magento 2 Next Previous Extension](https://github.com/magepow/magento-2-next-previous/blob/main/media/magento-2-next-and-previous-3.png)
 
 - Displays the back to current category button.
 
-![Magento 2 Next Previous Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous-4.gif)
+![Magento 2 Next Previous Extension](https://github.com/magepow/magento-2-next-previous/blob/main/media/magento-2-next-and-previous-4.gif)
 
 **Pro version with outstanding features**
 
@@ -82,11 +82,11 @@ In "Show Product Image" select "Yes" or "No" to show or not show product image o
 
 In "Sort position" select "Ascending" or "Descending" to define the product show position.
 
-![Magento 2 Next Previous Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous-5.png)
+![Magento 2 Next Previous Extension](https://github.com/magepow/magento-2-next-previous/blob/main/media/magento-2-next-and-previous-5.png)
 
 With the ro version you need to install the following features:
 
-![Magento 2 Next Previous Extension](https://github.com/magepow/magento-2-next-previous/blob/master/Media/magento-2-next-and-previous.png)
+![Magento 2 Next Previous Extension](https://github.com/magepow/magento-2-next-previous/blob/main/media/magento-2-next-and-previous.png)
 
 Go to the product page and see how it works.
 
