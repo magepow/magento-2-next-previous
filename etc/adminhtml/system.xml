@@ -4,7 +4,7 @@
         <tab id="magepow" translate="label" sortOrder="102">
              <label><![CDATA[Magepow]]></label>
         </tab>
-        <section id="magepow_nextprevious" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="magepow_nextprevious" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
             <label><![CDATA[Next Previous]]></label>
             <tab>magepow</tab>
             <resource>Magepow_Nextprevious::config</resource>
