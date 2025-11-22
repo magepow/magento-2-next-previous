@@ -73,8 +73,8 @@ class Nextprevious extends \Magento\Catalog\Block\Product\AbstractProduct
     public function getCurrentCategory($product)
     {
         $currentCategory = $product->getCategory();
-        $rootCategoryId = $this->_storeManager->getStore()->getRootCategoryId();
         if(!$currentCategory || $currentCategory->getIsActive() == 0){
+            $rootCategoryId  = $this->_storeManager->getStore()->getRootCategoryId();
             foreach($product->getCategoryCollection() as $category) {
                 $categoryId = $category->getId();
                 if($rootCategoryId == $categoryId) continue;
